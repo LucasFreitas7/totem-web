@@ -1,0 +1,37 @@
+.info-boleto{
+    height: 60vh;
+    margin-right: 5%;
+    margin-left: 5%;
+    background-color: #68A8F4;
+    border-radius: 5%;
+    text-align: center;
+}
+.text-boleto{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    line-height: 3.2rem;
+
+}
+.text-titulo{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.0rem;
+
+}
+
+.text-error{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2.0rem;
+    color: crimson;
+
+}
+.App-botao-continuar{
+    border:none!important;
+    background-color: #68A8F4!important;
+}
+  

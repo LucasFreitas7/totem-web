@@ -1,0 +1,62 @@
+.App {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+}
+.App-label-text{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+
+  color: #000000;
+}
+.App-Ac7{
+  justify-content: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  background-color: #f30000;
+  
+}
+main{
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+}
+aside{
+  background-color: brown;
+  height: 700px;
+}
+.App-Playstore{
+  margin-top: 20px;
+  margin-right: 100px;
+}
+.App-Appstore{
+  margin-right: 20px;
+}
+.App-QRCODE1{
+  margin-left: 50px;
+}
+footer{
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+
+
+}
+
+.App-botao-pagar{
+  border:none!important;
+  background-color: rgb(255, 255, 255)!important;
+}
+.App-label-text{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 23px;
+
+}
