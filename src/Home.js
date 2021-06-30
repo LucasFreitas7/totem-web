@@ -1,12 +1,14 @@
 import React from 'react'
 import Ac7 from './imagens/ac7.jpg'
-import Botao_Pagar from './imagens/botao_pagar.jpg'
+import Botao_Pagar from './imagens/botao_pagar.png'
 import Menu from './imagens/menu.png'
 import Playstore from './imagens/play_store.jpg'
 import Appstore from './imagens/app_store.png'
 import QRcode1 from './imagens/qrcode_appstore.png'
 import QRcode2 from './imagens/qrcode_playstore.png'
+import Botao_Recarga from './imagens/botao_recarga.png'
 import { Link } from 'react-router-dom'
+import Botao_Emprestimo from './imagens/botao_emprestimo.png'
 import './Home.css'
 function Home() {
   return (
@@ -22,8 +24,16 @@ function Home() {
       <footer>
         <Link to="/pagar">  <button className="App-botao-pagar"><img src={Botao_Pagar} className="App-Pagar" alt="Pagar" />
         </button></Link>
+        <button className="App-botao-emprestimo"  onClick={(e) => {
+            e.preventDefault();
+            window.location.href='https://register.caas.digital/ac7pay/proposal/company';
+          }}>
+          <img src={Botao_Emprestimo} className="App-Emprestimo" alt="Emprestimo" />
+        </button>
         <br>
         </br>
+        <Link to ="/recarga"><button className = "App-botao-recarga"><img src={Botao_Recarga} className="App-Recarga" alt="Recarga" /></button></Link>
+        <br></br>
         <text className="App-label-text">Abre AGORA sua conta digital GRÁTIS,  Escaneie o QRcode e CADASTRE-SE</text>
         <br>
         </br>

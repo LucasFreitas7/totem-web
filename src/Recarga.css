@@ -1,0 +1,33 @@
+.App {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+  }
+
+.Info-recarga{
+    text-align: center;
+}
+
+.Text{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 35px;
+    color: #000000;
+}
+
+.App-botao-iniciar{
+    border:none!important;
+    margin-right: 20px;
+    margin-top: 30px;
+    background-color: rgb(255, 255, 255)!important;
+    
+  
+}
+
+.App-botao-voltar{
+    border:none!important;
+    background-color: rgb(255, 255, 255)!important;
+    
+  
+}

@@ -3,6 +3,7 @@ import { BrowserRouter, BrowserRouter as Router, Route, Switch } from 'react-rou
 
 import Home from './Home'
 import Pagar from './Pagar'
+import Recarga from './Recarga'
 
 export default function Routes(){
     return(
@@ -10,6 +11,7 @@ export default function Routes(){
            <Switch>
                <Route exact path = '/' component= {Home}/>
                <Route path = '/pagar' component= {Pagar}/>
+               <Route path = '/Recarga' component = {Recarga}/>
            </Switch>
         </BrowserRouter>
 

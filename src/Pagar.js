@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Ac7 from './imagens/ac7.jpg'
 import Voltar from './imagens/voltar.png'
 import Botao from './imagens/botao.png'
+import { Link } from 'react-router-dom'
 import './Pagar.css'
 var teste = "teste"
 class Pagar extends Component{
@@ -22,7 +23,7 @@ class Pagar extends Component{
     return (
         <div className="App">
             <header className="App-header">
-                <img src={Voltar} className="App-voltar" alt="voltar" />
+                <Link to = "/"><button className = "App-botao-voltar"><img src={Voltar} className="App-voltar" alt="voltar" /></button></Link>
             </header>
             <main ClassName= "main_pagar">
                 <img src={Ac7} className="App-Ac7" alt="Ac7" />

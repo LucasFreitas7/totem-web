@@ -20,7 +20,7 @@
   }
 }
 .App-header {
-  background-color: #f30000;
+  background-color: #ffffff;
   
 }
 main{
@@ -28,7 +28,7 @@ main{
   text-align: center;
 }
 aside{
-  background-color: brown;
+  background-color: rgb(255, 255, 255);
   height: 700px;
 }
 .App-Playstore{
@@ -48,8 +48,23 @@ footer{
 
 }
 
+.App-botao-emprestimo{
+  border:none!important;
+  margin-right: 20px;
+  background-color: rgb(255, 255, 255)!important;
+  
+
+}
+.App-botao-recarga{
+  border:none!important;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: rgb(255, 255, 255)!important;
+}
+
 .App-botao-pagar{
   border:none!important;
+  margin-right: 80px;
   background-color: rgb(255, 255, 255)!important;
 }
 .App-label-text{
