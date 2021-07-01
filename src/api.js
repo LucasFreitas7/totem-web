@@ -1,7 +1,8 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://127.0.0.1:5000/recargacelular'
+    baseURL: 'http://127.0.0.1:5000/recargacelular',
+    headers: {"acesso": ""}
 });
 
 export default api;

@@ -7,8 +7,9 @@ import './Recarga.css'
 import api from './api';
 class Recarga extends Component{
     state = {
-        recarga: [],
+        status: [],
     }
+    
     render(){
         return(
             <div className="App">
@@ -31,11 +32,12 @@ class Recarga extends Component{
                 <div className = "Info-recarga">
                     <text className = "Text">Para iniciar o processo de recarga no celular, clique no botão iniciar abaixo.</text>
                     <br></br>
-                    <button className = "App-botao-iniciar"onClick={(e) => {
-                      e.preventDefault();
-                      const response = api.get('');
-                      this.setState({recarga: response.data});
-                    }}><img src={Botao_Iniciar} className="App-Iniciar" alt="Iniciar" /></button>
+                    <button className = "App-botao-iniciar" onClick={async(e) => {
+                        const response = await api.get();
+                        this.setState({status: response.data});
+                        console.log(response.data)
+                    }}
+                    ><img src={Botao_Iniciar} className="App-Iniciar" alt="Iniciar" /></button>
                 </div>
             </div>
             

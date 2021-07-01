@@ -1,5 +1,6 @@
-from flask import Flask
+from flask import Flask, jsonify, request
 from ctypes import *
+from flask_cors import CORS
 import ctypes
 
 
@@ -16,8 +17,16 @@ new_sCNPJParceiro = sCNPJParceiro.encode('utf-8')
 #  print(f"{lib.VendeCredito}")
 
 app = Flask("BackTotem")
+CORS(app)
 @app.route("/recargacelular", methods = ["GET"])
-def olaMundo():
-    print("Requisição para chamar a dll")
-    return lib.RecargaCelular(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(1), c_int(1))
+
+def requisicaoRecarga():
+        try:
+            request.headers['acesso']
+            lib.RecargaCelular(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(1), c_int(1))
+            print("Requisição para chamar a dll")
+            return jsonify({'status' : "Processado com sucesso"});
+        except:
+            return jsonify({'status' : "Erro no processamento"});
+   
 app.run()
