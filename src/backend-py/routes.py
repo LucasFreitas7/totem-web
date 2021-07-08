@@ -29,6 +29,17 @@ def requisicaoRecarga():
             if(string_nova[0] == 83 and string_nova[1] == 59 and string_nova[2] == 49 and string_nova[3] == 59 and string_nova[4] == 84 and string_nova[5] == 114 and string_nova[6] == 97 and string_nova[7] == 110 and string_nova[8] == 115 and string_nova[9] == 97 and string_nova[10] == 99 and string_nova[11] == 97 and string_nova
             [12] == 111):
                 print("sera processado")
+                arquivo = open("impressao.txt", "w")
+                tamanho = len(string_nova)
+                i = 0
+                for i in range(tamanho):
+                    teste = chr(string_nova[i])
+                    print(teste)
+                    arquivo.write(teste)
+                
+                arquivo.close()
+                string_teste = "impressao.txt"
+                os.startfile(string_teste, 'print')
                 lib.Confirmar(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom))
                 return jsonify({'status' : "Recarga celular processado com sucesso"})
 
@@ -54,15 +65,14 @@ def requisicaoVendeCredito():
             [12] == 111):
                 print("sera processado")
                 arquivo = open("impressao.txt", "w")
-                print("chegou aq teste ")
                 tamanho = len(string_nova)
-                print(tamanho)
                 i = 0
                 for i in range(tamanho):
                     teste = chr(string_nova[i])
                     print(teste)
                     arquivo.write(teste)
                 
+                arquivo.close()
                 string_teste = "impressao.txt"
                 os.startfile(string_teste, 'print')
                 lib.Confirmar(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom))
