@@ -3,6 +3,7 @@ from ServicoDAO import *
 from flask_cors import CORS
 import ctypes
 from ctypes import *
+import os
 
 servico =  Servicos("60177876000130", "61492096000147", 30, 1, 1)
 parcelas = Parcelas("60177876000130", "61492096000147", 2,  30, 1, 1)
@@ -52,6 +53,18 @@ def requisicaoVendeCredito():
             if(string_nova[0] == 83 and string_nova[1] == 59 and string_nova[2] == 49 and string_nova[3] == 59 and string_nova[4] == 84 and string_nova[5] == 114 and string_nova[6] == 97 and string_nova[7] == 110 and string_nova[8] == 115 and string_nova[9] == 97 and string_nova[10] == 99 and string_nova[11] == 97 and string_nova
             [12] == 111):
                 print("sera processado")
+                arquivo = open("impressao.txt", "w")
+                print("chegou aq teste ")
+                tamanho = len(string_nova)
+                print(tamanho)
+                i = 0
+                for i in range(tamanho):
+                    teste = chr(string_nova[i])
+                    print(teste)
+                    arquivo.write(teste)
+                
+                string_teste = "impressao.txt"
+                os.startfile(string_teste, 'print')
                 lib.Confirmar(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom))
                 return jsonify({'status' : "Venda credito processado com sucesso"})
 
