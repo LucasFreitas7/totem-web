@@ -1,8 +1,8 @@
 from flask import Flask, jsonify, request
-from ctypes import *
 from ServicoDAO import *
 from flask_cors import CORS
 import ctypes
+from ctypes import *
 
 servico =  Servicos("60177876000130", "61492096000147", 30, 1, 1)
 parcelas = Parcelas("60177876000130", "61492096000147", 2,  30, 1, 1)
@@ -18,12 +18,11 @@ new_sCNPJParceiro = servico.sCNPJParceiro.encode('utf-8')
 app = Flask("BackTotem")
 CORS(app)
 @app.route("/recargacelular", methods = ["GET"])
-
 def requisicaoRecarga():
         try:
             request.headers['acesso']
-            lib.RecargaCelular(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom), c_int(servico.iLeitor))
-            servico.iCupom + 1
+            servico.setIcupom(1)
+            retorno_s = lib.RecargaCelular(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom), c_int(servico.iLeitor))
             print("Requisição para chamar a Recarga")
             return jsonify({'status' : "Recarga processada com sucesso"})
         except:
@@ -36,10 +35,22 @@ def requisicaoRecarga():
 def requisicaoVendeCredito():
         try:
             request.headers['acesso']
-            lib.VendeCredito(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_double(servico.dValor), c_int(servico.iCupom), c_int(servico.iLeitor))
-            servico.iCupom + 1
-            print("Requisição para chamar a venda credito")
-            return jsonify({'status' : "Venda credito processado com sucesso"})
+            servico.setIcupom(2)
+            strchr = lib.VendeCredito
+            strchr.restype = c_char_p
+            string_nova = strchr(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_double(servico.dValor), c_int(servico.iCupom), c_int(servico.iLeitor))
+            print("---------------------------------------------------")
+            if(string_nova[0] == 83 and string_nova[1] == 59 and string_nova[2] == 49 and string_nova[3] == 59 and string_nova[4] == 84 and string_nova[5] == 114 and string_nova[6] == 97 and string_nova[7] == 110 and string_nova[8] == 115 and string_nova[9] == 97 and string_nova[10] == 99 and string_nova[11] == 97 and string_nova
+            [12] == 111):
+                print("sera processado")
+                lib.Confirmar(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom))
+                return jsonify({'status' : "Venda credito processado com sucesso"})
+
+            else:
+                print("qualquer erro nao sera processado")
+                return jsonify({'status' : "Erro no processamento"})
+            
+            
         except:
             return jsonify({'status' : "Erro no processamento"})
 
@@ -48,8 +59,8 @@ def requisicaoVendeCredito():
 def requisicaoVendeDebito():
         try:
             request.headers['acesso']
+            servico.setIcupom(3)
             lib.VendeDebito(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_double(servico.dValor), c_int(servico.iCupom), c_int(servico.iLeitor))
-            servico.iCupom + 1
             print("Requisição para chamar a venda debito")
             return jsonify({'status' : "Venda debito processado com sucesso"})
         except:
@@ -60,8 +71,8 @@ def requisicaoVendeDebito():
 def vendeCreditoParcelado():
         try:
             request.headers['acesso']
+            servico.setIcupom(4)
             lib.VendeCreditoParcLoja(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(parcelas.iParcelas), c_double(servico.dValor), c_int(servico.iCupom), c_int(servico.iLeitor))
-            servico.iCupom + 1
             print("Requisição para chamar a venda credito parcelado")
             return jsonify({'status' : "Venda credito parcelado processado com sucesso"})
         except:
@@ -84,6 +95,7 @@ def requisicaoCancelamento():
 def requisicaoReimpressao():
         try:
             request.headers['acesso']
+            servico.setIcupom(5)
             lib.Reimpressao(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_double(servico.dValor), c_int(servico.iCupom), c_int(1))
             print("Requisição para reimpressao")
             return jsonify({'status' : "Reimpressao processado com sucesso"})
@@ -95,6 +107,7 @@ def requisicaoReimpressao():
 def requisicaoRelatorio():
         try:
             request.headers['acesso']
+            servico.setIcupom(6)
             lib.Relatorio(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro), c_int(servico.iCupom), c_int(1))
             print("Requisição para relatorio")
             return jsonify({'status' : "Relatorio processado com sucesso"})

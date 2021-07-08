@@ -19,6 +19,9 @@ class Servicos:
             f"Cupom: {self.iCupom}\n"
             f"Leitor: {self.iLeitor}"    
         )
+    def setIcupom(self, Cupom_new: int):
+        self.iCupom = Cupom_new
+
 
 
 
