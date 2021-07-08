@@ -22,8 +22,18 @@ def requisicaoRecarga():
         try:
             request.headers['acesso']
             servico.setIcupom(1)
-            retorno_s = lib.RecargaCelular(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom), c_int(servico.iLeitor))
-            print("Requisição para chamar a Recarga")
+            strchr = lib.RecargaCelular
+            strchr.restype = c_char_p
+            string_nova = strchr(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom), c_int(servico.iLeitor))
+            if(string_nova[0] == 83 and string_nova[1] == 59 and string_nova[2] == 49 and string_nova[3] == 59 and string_nova[4] == 84 and string_nova[5] == 114 and string_nova[6] == 97 and string_nova[7] == 110 and string_nova[8] == 115 and string_nova[9] == 97 and string_nova[10] == 99 and string_nova[11] == 97 and string_nova
+            [12] == 111):
+                print("sera processado")
+                lib.Confirmar(ctypes.c_char_p(new_sCNPJCliente),ctypes.c_char_p(new_sCNPJParceiro),c_int(servico.iCupom))
+                return jsonify({'status' : "Recarga celular processado com sucesso"})
+
+            else:
+                print("qualquer erro nao sera processado")
+                return jsonify({'status' : "Erro no processamento"})
             return jsonify({'status' : "Recarga processada com sucesso"})
         except:
             return jsonify({'status' : "Erro no processamento"})
