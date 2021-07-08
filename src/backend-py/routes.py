@@ -34,7 +34,6 @@ def requisicaoRecarga():
             else:
                 print("qualquer erro nao sera processado")
                 return jsonify({'status' : "Erro no processamento"})
-            return jsonify({'status' : "Recarga processada com sucesso"})
         except:
             return jsonify({'status' : "Erro no processamento"})
    
