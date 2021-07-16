@@ -1,0 +1,94 @@
+.App {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+  }
+.div_qrcode{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    background-color: rgb(228, 48, 48);
+    width:100%;
+    height: 50%;
+
+}
+.div_imagens{
+    background-color: rgb(255, 255, 255);
+}
+.Teste{
+    background-color: rgb(255, 255, 255);
+    height: 50%;
+}
+.div_info{
+    background-color: rgb(255, 255, 255);
+}
+.App-Receba{
+    margin: 20px;
+    margin-left: 100px;
+}
+.App-Digital{
+    margin: 20px;
+}
+.App-JurosBaixos{
+    margin: 20px;
+}
+.App-Analise{
+    margin: 20px;
+    margin-left: 100px;
+}
+
+.App-text1{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: #AEBD02;
+}
+
+.App-text2{
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 26px;
+    color: #000000;
+}
+
+.App-text3{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 26px;
+    color: #000000;
+}
+.App-text5{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 35px;
+    color: #000000;
+}
+.App-text6{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    margin-left: 30%;
+    color: #AEBD02;
+}
+.App-text7{
+    
+    font-family: Roboto;
+    font-style: italic;
+    font-weight: 900;
+    font-size: 35px;
+    line-height: 35px;
+
+    color: #000000;
+}
+.App-QRcode{
+    margin-left: 40%;
+}

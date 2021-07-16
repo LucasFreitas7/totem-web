@@ -23,13 +23,12 @@ function Home() {
       </aside>
       <footer>
         <Link to="/pagar">  <button className="App-botao-pagar"><img src={Botao_Pagar} className="App-Pagar" alt="Pagar" />
-        </button></Link>
-        <button className="App-botao-emprestimo"  onClick={(e) => {
-            e.preventDefault();
-            window.location.href='https://register.caas.digital/ac7pay/proposal/company';
-          }}>
-          <img src={Botao_Emprestimo} className="App-Emprestimo" alt="Emprestimo" />
         </button>
+        </Link>
+        <Link to = "/Emprestimo"><button className="App-botao-emprestimo">
+            <img src={Botao_Emprestimo} className="App-Emprestimo" alt="Emprestimo" />
+          </button>
+        </Link>
         <br>
         </br>
         <Link to ="/recarga"><button className = "App-botao-recarga"><img src={Botao_Recarga} className="App-Recarga" alt="Recarga" /></button></Link>

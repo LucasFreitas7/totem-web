@@ -4,6 +4,7 @@ import { BrowserRouter, BrowserRouter as Router, Route, Switch } from 'react-rou
 import Home from './Home'
 import Pagar from './Pagar'
 import Recarga from './Recarga'
+import Emprestimo from './Emprestimo'
 
 export default function Routes(){
     return(
@@ -12,6 +13,7 @@ export default function Routes(){
                <Route exact path = '/' component= {Home}/>
                <Route path = '/pagar' component= {Pagar}/>
                <Route path = '/Recarga' component = {Recarga}/>
+               <Route path = '/Emprestimo' component = {Emprestimo}/>
            </Switch>
         </BrowserRouter>
 
