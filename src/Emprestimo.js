@@ -47,9 +47,9 @@ class Emprestimo extends Component{
                 <div>
                 </div>
                 <div>
-                    <p className = "App-text3"><text className= "App-text1">Como fazer sua solitcitação de empréstimo?</text> Basta você apontar a camera do seu celular para o QRCode abaixo, caso tenha problemas com isso, o link estará disponibilizado abaixo, nele é so selecionar o tipo de empréstimo, preencher os campos com seus dados, que iremos analisar o seu perfil e te reetornar via e-mail em até 3 dias.</p>
+                    <p className = "App-text3"><text className= "App-text1">Como fazer sua solitcitação de empréstimo?</text> Basta apontar a camera do seu celular para o QRCode abaixo, você será apontado diretamente para nosso site de micro crédito do AC7 Pay, simule na hora e já faça seu pedido pelo celular.</p>
                     <img src={QRcode} className="App-QRcode" alt="QRcode" />
-                    <p className = "App-text7"><text className = "App-text6">Link: </text>  https://register.caas.digital/ac7pay</p>
+                    <p className = "App-text7"><text className = "App-text6">Link: </text>  https://ac7pay.caas.digital/</p>
                 </div>
             </div>
         )
