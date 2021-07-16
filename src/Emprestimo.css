@@ -6,7 +6,6 @@
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     background-color: rgb(228, 48, 48);
-    width:100%;
     height: 50%;
 
 }
@@ -21,18 +20,17 @@
     background-color: rgb(255, 255, 255);
 }
 .App-Receba{
-    margin: 20px;
-    margin-left: 100px;
+    margin: 15px;
 }
 .App-Digital{
-    margin: 20px;
+    margin: 15px;
 }
 .App-JurosBaixos{
-    margin: 20px;
+    margin: 15px;
 }
 .App-Analise{
-    margin: 20px;
-    margin-left: 100px;
+    margin: 15px;
+
 }
 
 .App-text1{
