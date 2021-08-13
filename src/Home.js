@@ -9,6 +9,7 @@ import QRcode2 from './imagens/qrcode_playstore.png'
 import Botao_Recarga from './imagens/botao_recarga.png'
 import { Link } from 'react-router-dom'
 import Botao_Emprestimo from './imagens/botao_emprestimo.png'
+import Botao_Emprestimo_Consignado from './imagens/botao_emprestimo_consignado.png'
 import './Home.css'
 function Home() {
   return (
@@ -25,13 +26,18 @@ function Home() {
         <Link to="/pagar">  <button className="App-botao-pagar"><img src={Botao_Pagar} className="App-Pagar" alt="Pagar" />
         </button>
         </Link>
+        <Link to ="/recarga"><button className = "App-botao-recarga"><img src={Botao_Recarga} className="App-Recarga" alt="Recarga" /></button></Link>
+        <br>
+        </br>
+        <br></br>
         <Link to = "/Emprestimo"><button className="App-botao-emprestimo">
             <img src={Botao_Emprestimo} className="App-Emprestimo" alt="Emprestimo" />
           </button>
         </Link>
-        <br>
-        </br>
-        <Link to ="/recarga"><button className = "App-botao-recarga"><img src={Botao_Recarga} className="App-Recarga" alt="Recarga" /></button></Link>
+        <Link to = "/EmprestimoConsignado"><button className="App-botao-emprestimo-consignado">
+            <img src={Botao_Emprestimo_Consignado} className="App-Emprestimo-consignado" alt="Emprestimo-consignado" />
+          </button>
+        </Link>
         <br></br>
         <text className="App-label-text">Abre AGORA sua conta digital GRÁTIS,  Escaneie o QRcode e CADASTRE-SE</text>
         <br>

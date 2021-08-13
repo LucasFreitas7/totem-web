@@ -5,6 +5,7 @@ import Home from './Home'
 import Pagar from './Pagar'
 import Recarga from './Recarga'
 import Emprestimo from './Emprestimo'
+import Emprestimo_Consig from './Emprestimo_Consig';
 
 export default function Routes(){
     return(
@@ -14,6 +15,7 @@ export default function Routes(){
                <Route path = '/pagar' component= {Pagar}/>
                <Route path = '/Recarga' component = {Recarga}/>
                <Route path = '/Emprestimo' component = {Emprestimo}/>
+               <Route path = '/EmprestimoConsignado' component = {Emprestimo_Consig}/>
            </Switch>
         </BrowserRouter>
 

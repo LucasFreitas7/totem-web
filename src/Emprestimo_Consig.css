@@ -1,0 +1,49 @@
+.App {
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+}
+
+.div_info_pag2{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    background-color: rgb(255, 255, 255);
+    height: 50%;
+
+}
+
+.App-text1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+
+    color: #AEBD02;
+}
+.App-Propaganda{
+    margin-left: 70px;
+    margin-top: -10px;
+}
+
+.App-text3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 30px;
+    color: #000000;
+}
+
+.App-text4{
+    
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 35px;
+    margin-left: 25%;
+    color: #000000;
+}
+.App-QRcode_Consig{
+    margin-left: 40%;
+}

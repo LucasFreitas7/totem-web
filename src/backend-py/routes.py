@@ -4,9 +4,8 @@ from flask_cors import CORS
 import ctypes
 from ctypes import *
 import os
-
-servico =  Servicos("60177876000130", "61492096000147", 30, 1, 1)
-parcelas = Parcelas("60177876000130", "61492096000147", 2,  30, 1, 1)
+servico =  Servicos("40076659000146", "40076659000146", 30, 1, 1)
+parcelas = Parcelas("40076659000146", "40076659000146", 2,  30, 1, 1)
 lib = WinDLL(r".\\TefClientmc.dll")
 
 ctypes.c_wchar_p()

@@ -55,16 +55,22 @@ footer{
   
 
 }
-.App-botao-recarga{
+.App-botao-emprestimo-consignado{
   border:none!important;
   margin-right: 20px;
-  margin-top: 20px;
+  margin-top: 5px;
+  background-color: rgb(255, 255, 255)!important;
+}
+.App-botao-recarga{
+  border:none!important;
+  margin-right: 35px;
+  margin-top: 5px;
   background-color: rgb(255, 255, 255)!important;
 }
 
 .App-botao-pagar{
   border:none!important;
-  margin-right: 80px;
+  margin-right: 20px;
   background-color: rgb(255, 255, 255)!important;
 }
 .App-label-text{
